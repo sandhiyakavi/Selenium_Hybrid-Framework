@@ -1,0 +1,16 @@
+package com.pages.helper;
+
+import com.base.ProjectSpecificMethod;
+import org.openqa.selenium.By;
+
+public class EditLeadPage extends ProjectSpecificMethod {
+	
+	
+	public EditLeadPage enterPhno(String phNo) {
+		getDriver().findElement(By.xpath("//span[text()='Phone']")).click();
+		getDriver().findElement(By.xpath("//input[@name='phoneNumber']")).sendKeys("99");
+		return new EditLeadPage();
+	}
+
+
+}

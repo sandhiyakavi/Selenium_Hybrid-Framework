@@ -1,0 +1,28 @@
+package com.pages.helper;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.base.ProjectSpecificMethod;
+
+import io.cucumber.java.en.When;
+
+public class LeadsPage  extends ProjectSpecificMethod{
+	
+	/*
+	 * public LeadsPage() { this.driver=driver; }
+	 */
+	@When("click on the Create Lead link")
+	public CreateLeadPage clickCreateLead() {
+		getDriver().findElement(By.linkText("Create Lead")).click();
+		return new CreateLeadPage();
+	}
+	
+	@When("Click on the Find Leads link")
+	public FindLeadPage clickFindLeads() {
+		getDriver().findElement(By.xpath("//a[text()='Find Leads']")).click();
+		return new FindLeadPage();
+		}
+	
+
+}

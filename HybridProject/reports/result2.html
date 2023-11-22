@@ -1,0 +1,3728 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+				<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Nov 21, 2023 11:13:21 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Smoke</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>55</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>250</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 05:48:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 05:48:31 PM</span>
+	<span class='label end-time'>Nov 12, 2023 05:48:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+780ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:48:36 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot327.jpg" width="10%" src=".././snap/shot327.jpg" data-src=".././snap/shot327.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:48:36 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot716.jpg" width="10%" src=".././snap/shot716.jpg" data-src=".././snap/shot716.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:48:37 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot365.jpg" width="10%" src=".././snap/shot365.jpg" data-src=".././snap/shot365.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:17:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:17:02 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:17:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='4'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+785ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:08 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot224.jpg" width="10%" src=".././snap/shot224.jpg" data-src=".././snap/shot224.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:08 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot418.jpg" width="10%" src=".././snap/shot418.jpg" data-src=".././snap/shot418.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:09 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot614.jpg" width="10%" src=".././snap/shot614.jpg" data-src=".././snap/shot614.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='5'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+787ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:13 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot540.jpg" width="10%" src=".././snap/shot540.jpg" data-src=".././snap/shot540.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:13 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot417.jpg" width="10%" src=".././snap/shot417.jpg" data-src=".././snap/shot417.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:17:13 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot730.jpg" width="10%" src=".././snap/shot730.jpg" data-src=".././snap/shot730.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:20:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:20:58 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:21:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='7'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+790ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:05 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot312.jpg" width="10%" src=".././snap/shot312.jpg" data-src=".././snap/shot312.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:05 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot380.jpg" width="10%" src=".././snap/shot380.jpg" data-src=".././snap/shot380.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:06 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot516.jpg" width="10%" src=".././snap/shot516.jpg" data-src=".././snap/shot516.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+792ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:09 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot256.jpg" width="10%" src=".././snap/shot256.jpg" data-src=".././snap/shot256.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:09 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot639.jpg" width="10%" src=".././snap/shot639.jpg" data-src=".././snap/shot639.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:21:10 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot319.jpg" width="10%" src=".././snap/shot319.jpg" data-src=".././snap/shot319.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:24:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:24:19 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:24:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='10'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+795ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:24 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot59.jpg" width="10%" src=".././snap/shot59.jpg" data-src=".././snap/shot59.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:25 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot900.jpg" width="10%" src=".././snap/shot900.jpg" data-src=".././snap/shot900.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:25 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot49.jpg" width="10%" src=".././snap/shot49.jpg" data-src=".././snap/shot49.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='11'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+797ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:28 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot27.jpg" width="10%" src=".././snap/shot27.jpg" data-src=".././snap/shot27.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:29 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot890.jpg" width="10%" src=".././snap/shot890.jpg" data-src=".././snap/shot890.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:24:29 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot122.jpg" width="10%" src=".././snap/shot122.jpg" data-src=".././snap/shot122.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:28:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:28:15 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:28:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='13'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+800ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='14'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+801ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:34:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:34:06 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:34:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='16'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+802ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:11 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot923.jpg" width="10%" src=".././snap/shot923.jpg" data-src=".././snap/shot923.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:11 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot113.jpg" width="10%" src=".././snap/shot113.jpg" data-src=".././snap/shot113.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:12 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot261.jpg" width="10%" src=".././snap/shot261.jpg" data-src=".././snap/shot261.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='17'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+803ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:15 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot324.jpg" width="10%" src=".././snap/shot324.jpg" data-src=".././snap/shot324.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:15 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot767.jpg" width="10%" src=".././snap/shot767.jpg" data-src=".././snap/shot767.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:34:16 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot876.jpg" width="10%" src=".././snap/shot876.jpg" data-src=".././snap/shot876.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:35:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:35:24 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:35:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='19'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+805ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:29 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot150.jpg" width="10%" src=".././snap/shot150.jpg" data-src=".././snap/shot150.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:29 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot252.jpg" width="10%" src=".././snap/shot252.jpg" data-src=".././snap/shot252.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:30 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot168.jpg" width="10%" src=".././snap/shot168.jpg" data-src=".././snap/shot168.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='20'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+806ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:33 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot659.jpg" width="10%" src=".././snap/shot659.jpg" data-src=".././snap/shot659.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:33 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot671.jpg" width="10%" src=".././snap/shot671.jpg" data-src=".././snap/shot671.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:35:34 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot150.jpg" width="10%" src=".././snap/shot150.jpg" data-src=".././snap/shot150.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:41:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:41:02 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:41:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='22'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+809ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:07 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot437.jpg" width="10%" src=".././snap/shot437.jpg" data-src=".././snap/shot437.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:07 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot576.jpg" width="10%" src=".././snap/shot576.jpg" data-src=".././snap/shot576.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:08 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot537.jpg" width="10%" src=".././snap/shot537.jpg" data-src=".././snap/shot537.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='23'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+810ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:11 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot196.jpg" width="10%" src=".././snap/shot196.jpg" data-src=".././snap/shot196.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:12 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot594.jpg" width="10%" src=".././snap/shot594.jpg" data-src=".././snap/shot594.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:41:12 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot659.jpg" width="10%" src=".././snap/shot659.jpg" data-src=".././snap/shot659.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:43:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:43:48 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:43:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='25'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+812ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:53 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot739.jpg" width="10%" src=".././snap/shot739.jpg" data-src=".././snap/shot739.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:53 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot448.jpg" width="10%" src=".././snap/shot448.jpg" data-src=".././snap/shot448.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:54 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot908.jpg" width="10%" src=".././snap/shot908.jpg" data-src=".././snap/shot908.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='26'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+813ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:57 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot424.jpg" width="10%" src=".././snap/shot424.jpg" data-src=".././snap/shot424.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:57 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot708.jpg" width="10%" src=".././snap/shot708.jpg" data-src=".././snap/shot708.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:43:58 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot617.jpg" width="10%" src=".././snap/shot617.jpg" data-src=".././snap/shot617.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:44:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:44:59 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:45:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='28'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+816ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:03 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot870.jpg" width="10%" src=".././snap/shot870.jpg" data-src=".././snap/shot870.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:03 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot816.jpg" width="10%" src=".././snap/shot816.jpg" data-src=".././snap/shot816.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:04 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot934.jpg" width="10%" src=".././snap/shot934.jpg" data-src=".././snap/shot934.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='29'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+817ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:08 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot98.jpg" width="10%" src=".././snap/shot98.jpg" data-src=".././snap/shot98.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:08 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot438.jpg" width="10%" src=".././snap/shot438.jpg" data-src=".././snap/shot438.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:45:09 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot574.jpg" width="10%" src=".././snap/shot574.jpg" data-src=".././snap/shot574.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:48:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:48:57 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:49:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='31'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+819ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:02 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot663.jpg" width="10%" src=".././snap/shot663.jpg" data-src=".././snap/shot663.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:02 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot275.jpg" width="10%" src=".././snap/shot275.jpg" data-src=".././snap/shot275.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:02 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot613.jpg" width="10%" src=".././snap/shot613.jpg" data-src=".././snap/shot613.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='32'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+820ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:06 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot350.jpg" width="10%" src=".././snap/shot350.jpg" data-src=".././snap/shot350.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:06 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot779.jpg" width="10%" src=".././snap/shot779.jpg" data-src=".././snap/shot779.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:49:07 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot110.jpg" width="10%" src=".././snap/shot110.jpg" data-src=".././snap/shot110.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:50:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:50:12 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:50:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='34'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+822ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:16 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot924.jpg" width="10%" src=".././snap/shot924.jpg" data-src=".././snap/shot924.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:16 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot312.jpg" width="10%" src=".././snap/shot312.jpg" data-src=".././snap/shot312.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:17 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot500.jpg" width="10%" src=".././snap/shot500.jpg" data-src=".././snap/shot500.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='35'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+823ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:27 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot457.jpg" width="10%" src=".././snap/shot457.jpg" data-src=".././snap/shot457.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:27 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot524.jpg" width="10%" src=".././snap/shot524.jpg" data-src=".././snap/shot524.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:50:27 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot984.jpg" width="10%" src=".././snap/shot984.jpg" data-src=".././snap/shot984.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 06:52:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 06:52:09 PM</span>
+	<span class='label end-time'>Nov 12, 2023 06:52:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='37'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+825ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:14 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot378.jpg" width="10%" src=".././snap/shot378.jpg" data-src=".././snap/shot378.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:14 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot147.jpg" width="10%" src=".././snap/shot147.jpg" data-src=".././snap/shot147.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:15 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot835.jpg" width="10%" src=".././snap/shot835.jpg" data-src=".././snap/shot835.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='38'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+825ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:22 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot183.jpg" width="10%" src=".././snap/shot183.jpg" data-src=".././snap/shot183.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:23 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot113.jpg" width="10%" src=".././snap/shot113.jpg" data-src=".././snap/shot113.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>6:52:23 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot141.jpg" width="10%" src=".././snap/shot141.jpg" data-src=".././snap/shot141.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 07:05:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 07:05:27 PM</span>
+	<span class='label end-time'>Nov 12, 2023 07:05:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='40'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+828ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:33 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot251.jpg" width="10%" src=".././snap/shot251.jpg" data-src=".././snap/shot251.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:33 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot689.jpg" width="10%" src=".././snap/shot689.jpg" data-src=".././snap/shot689.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:34 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot661.jpg" width="10%" src=".././snap/shot661.jpg" data-src=".././snap/shot661.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='41'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+829ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:45 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot623.jpg" width="10%" src=".././snap/shot623.jpg" data-src=".././snap/shot623.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:45 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot912.jpg" width="10%" src=".././snap/shot912.jpg" data-src=".././snap/shot912.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:05:46 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot6.jpg" width="10%" src=".././snap/shot6.jpg" data-src=".././snap/shot6.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 12, 2023 07:32:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 12, 2023 07:32:10 PM</span>
+	<span class='label end-time'>Nov 12, 2023 07:32:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='43'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+831ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:15 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot471.jpg" width="10%" src=".././snap/shot471.jpg" data-src=".././snap/shot471.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:15 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot491.jpg" width="10%" src=".././snap/shot491.jpg" data-src=".././snap/shot491.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:15 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot675.jpg" width="10%" src=".././snap/shot675.jpg" data-src=".././snap/shot675.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='44'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+832ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:30 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot860.jpg" width="10%" src=".././snap/shot860.jpg" data-src=".././snap/shot860.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:30 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot571.jpg" width="10%" src=".././snap/shot571.jpg" data-src=".././snap/shot571.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:32:31 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot154.jpg" width="10%" src=".././snap/shot154.jpg" data-src=".././snap/shot154.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 04:35:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 04:35:10 PM</span>
+	<span class='label end-time'>Nov 21, 2023 04:35:32 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='46'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+836ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:16 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot641.jpg" width="10%" src=".././snap/shot641.jpg" data-src=".././snap/shot641.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:16 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot719.jpg" width="10%" src=".././snap/shot719.jpg" data-src=".././snap/shot719.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:17 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot403.jpg" width="10%" src=".././snap/shot403.jpg" data-src=".././snap/shot403.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='47'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+836ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:31 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot805.jpg" width="10%" src=".././snap/shot805.jpg" data-src=".././snap/shot805.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:32 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot49.jpg" width="10%" src=".././snap/shot49.jpg" data-src=".././snap/shot49.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:35:32 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot406.jpg" width="10%" src=".././snap/shot406.jpg" data-src=".././snap/shot406.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 04:38:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 04:38:50 PM</span>
+	<span class='label end-time'>Nov 21, 2023 04:39:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='49'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+838ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:38:54 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot479.jpg" width="10%" src=".././snap/shot479.jpg" data-src=".././snap/shot479.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:38:54 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot947.jpg" width="10%" src=".././snap/shot947.jpg" data-src=".././snap/shot947.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:38:55 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot650.jpg" width="10%" src=".././snap/shot650.jpg" data-src=".././snap/shot650.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='50'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+839ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:39:05 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot33.jpg" width="10%" src=".././snap/shot33.jpg" data-src=".././snap/shot33.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:39:05 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot344.jpg" width="10%" src=".././snap/shot344.jpg" data-src=".././snap/shot344.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:39:06 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot139.jpg" width="10%" src=".././snap/shot139.jpg" data-src=".././snap/shot139.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 04:41:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 04:41:19 PM</span>
+	<span class='label end-time'>Nov 21, 2023 04:41:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+0ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='52'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+841ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:24 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot102.jpg" width="10%" src=".././snap/shot102.jpg" data-src=".././snap/shot102.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:24 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot42.jpg" width="10%" src=".././snap/shot42.jpg" data-src=".././snap/shot42.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:24 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot533.jpg" width="10%" src=".././snap/shot533.jpg" data-src=".././snap/shot533.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='53'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+842ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:41 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot526.jpg" width="10%" src=".././snap/shot526.jpg" data-src=".././snap/shot526.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:42 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot938.jpg" width="10%" src=".././snap/shot938.jpg" data-src=".././snap/shot938.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:41:42 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot49.jpg" width="10%" src=".././snap/shot49.jpg" data-src=".././snap/shot49.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='54'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 04:45:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 04:45:51 PM</span>
+	<span class='label end-time'>Nov 21, 2023 04:46:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+0ms</span>
+</div>
+	<div class='test-desc'>Edit Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='55'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+844ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:45:56 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot88.jpg" width="10%" src=".././snap/shot88.jpg" data-src=".././snap/shot88.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:45:57 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot843.jpg" width="10%" src=".././snap/shot843.jpg" data-src=".././snap/shot843.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:45:57 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot531.jpg" width="10%" src=".././snap/shot531.jpg" data-src=".././snap/shot531.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='56'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+845ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:46:14 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot346.jpg" width="10%" src=".././snap/shot346.jpg" data-src=".././snap/shot346.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:46:15 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot265.jpg" width="10%" src=".././snap/shot265.jpg" data-src=".././snap/shot265.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:46:15 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot316.jpg" width="10%" src=".././snap/shot316.jpg" data-src=".././snap/shot316.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 04:49:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 04:49:47 PM</span>
+	<span class='label end-time'>Nov 21, 2023 04:50:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+0ms</span>
+</div>
+	<div class='test-desc'>Edit Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='58'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+847ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:49:52 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot37.jpg" width="10%" src=".././snap/shot37.jpg" data-src=".././snap/shot37.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:49:53 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot984.jpg" width="10%" src=".././snap/shot984.jpg" data-src=".././snap/shot984.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:49:53 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot728.jpg" width="10%" src=".././snap/shot728.jpg" data-src=".././snap/shot728.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='59'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+849ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:50:12 PM</td>
+													<td class='step-details'>Username is entered Successfully<img data-featherlight=".././snap/shot318.jpg" width="10%" src=".././snap/shot318.jpg" data-src=".././snap/shot318.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:50:12 PM</td>
+													<td class='step-details'>Password is entered Successfully<img data-featherlight=".././snap/shot841.jpg" width="10%" src=".././snap/shot841.jpg" data-src=".././snap/shot841.jpg"></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:50:13 PM</td>
+													<td class='step-details'>Login button is clicked Successfully<img data-featherlight=".././snap/shot501.jpg" width="10%" src=".././snap/shot501.jpg" data-src=".././snap/shot501.jpg"></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='60'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 07:19:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 07:19:17 PM</span>
+	<span class='label end-time'>Nov 21, 2023 07:19:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='61'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+851ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='62'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 07:21:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 07:21:24 PM</span>
+	<span class='label end-time'>Nov 21, 2023 07:21:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+0ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='63'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+852ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:21:29 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:21:29 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:21:29 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='64'>
+					<div class='test-heading'>
+						<span class='test-name'>Edit Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 07:31:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 07:31:13 PM</span>
+	<span class='label end-time'>Nov 21, 2023 07:31:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+0ms</span>
+</div>
+	<div class='test-desc'>Edit Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='65'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+855ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:18 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:18 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:19 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:19 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:24 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:25 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:26 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:26 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:27 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:27 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:30 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:31 PM</td>
+													<td class='step-details'>Edit button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:31 PM</td>
+													<td class='step-details'>The company name is changed in the field</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:34 PM</td>
+													<td class='step-details'>The Update button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:34 PM</td>
+													<td class='step-details'>View Lead page is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='66'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Edit Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+858ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:37 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:37 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:38 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:38 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:41 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:43 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:44 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:44 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:44 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:45 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:48 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:49 PM</td>
+													<td class='step-details'>Edit button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:49 PM</td>
+													<td class='step-details'>The company name is changed in the field</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:52 PM</td>
+													<td class='step-details'>The Update button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>7:31:52 PM</td>
+													<td class='step-details'>View Lead page is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='67'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 10:31:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 10:31:57 PM</span>
+	<span class='label end-time'>Nov 21, 2023 10:32:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+0ms</span>
+</div>
+	<div class='test-desc'>Delete Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='68'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+861ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:03 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:03 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:03 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:04 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='69'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+862ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:08 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:08 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:08 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:32:08 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='70'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 10:33:55 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 10:33:55 PM</span>
+	<span class='label end-time'>Nov 21, 2023 10:34:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+0ms</span>
+</div>
+	<div class='test-desc'>Delete Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='71'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+863ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:00 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:00 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:01 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:06 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:07 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:08 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:08 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:09 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:09 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:09 PM</td>
+													<td class='step-details'>Got the leadid from the first entry</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:12 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:14 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:14 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:15 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='72'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+865ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:18 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:18 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:19 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:19 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:24 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:26 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:28 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:28 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:28 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:28 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:28 PM</td>
+													<td class='step-details'>Got the leadid from the first entry</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:31 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:32 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:33 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:34:34 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='73'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 10:36:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 10:36:27 PM</span>
+	<span class='label end-time'>Nov 21, 2023 10:37:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+0ms</span>
+</div>
+	<div class='test-desc'>Delete Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='74'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+867ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:33 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:33 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:33 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:34 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:38 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:40 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:41 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:41 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:41 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:41 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:41 PM</td>
+													<td class='step-details'>Got the leadid from the first entry 10000</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:45 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:46 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:47 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:47 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='75'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+869ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:51 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:51 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:51 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:52 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:55 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:57 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:58 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:58 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:58 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:58 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:36:58 PM</td>
+													<td class='step-details'>Got the leadid from the first entry 10000</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:37:01 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:37:02 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:37:03 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:37:04 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='76'>
+					<div class='test-heading'>
+						<span class='test-name'>Delete Lead Functionality</span>
+						<span class='test-time'>Nov 21, 2023 10:40:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 10:40:17 PM</span>
+	<span class='label end-time'>Nov 21, 2023 10:40:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+0ms</span>
+</div>
+	<div class='test-desc'>Delete Lead Details </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='77'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+873ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:26 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:26 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:27 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:27 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:31 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:33 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:34 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:35 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:35 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:35 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:35 PM</td>
+													<td class='step-details'>Got the leadid from the first entry 10665</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:39 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:40 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:41 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:42 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='78'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Delete Lead Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+875ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:45 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:46 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:46 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:46 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:49 PM</td>
+													<td class='step-details'>Clicked on the CRMSFA linkin the Welcomepage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:51 PM</td>
+													<td class='step-details'>Leads link in the My Homepage is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:52 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:52 PM</td>
+													<td class='step-details'>The Phone link is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:53 PM</td>
+													<td class='step-details'>The Phone number is entered</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:53 PM</td>
+													<td class='step-details'>Find Leads button is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:53 PM</td>
+													<td class='step-details'>Got the leadid from the first entry 10371</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:57 PM</td>
+													<td class='step-details'>The First entry from the list is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:58 PM</td>
+													<td class='step-details'>Delete button in the View Lead page is clicked</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:59 PM</td>
+													<td class='step-details'>Clicked the Find Lead Link in the LeadsPage</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>10:40:59 PM</td>
+													<td class='step-details'>LeadID is deleted successfully</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='79'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 11:07:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 11:07:10 PM</span>
+	<span class='label end-time'>Nov 21, 2023 11:07:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='80'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+878ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='81'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 11:11:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 11:11:07 PM</span>
+	<span class='label end-time'>Nov 21, 2023 11:11:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='82'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 16s+879ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='83'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 11:13:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 11:13:05 PM</span>
+	<span class='label end-time'>Nov 21, 2023 11:13:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+0ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='84'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:21 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 11s+880ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:09 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:09 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:10 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:10 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='85'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Functionality</span>
+						<span class='test-time'>Nov 21, 2023 11:13:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 21, 2023 11:13:22 PM</span>
+	<span class='label end-time'>Nov 21, 2023 11:13:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+346ms</span>
+</div>
+	<div class='test-desc'>Login using valid credentials </div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Smoke</span>
+			</div>
+			<div class='author-list'>
+				<span class='author label white-text'>Sandhiya</span>
+			</div>
+	</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1 leaf pass' status='pass' test-id='86'>
+					<div class='collapsible-header'>
+						<h5 class='node-name'>Login Functionality</h5>
+						<span class="node-time label grey lighten-1 white-text">Nov 21, 2023 11:13:26 PM</span>
+						<span class='node-duration label grey lighten-1 white-text'>0h 0m 4s+337ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:26 PM</td>
+													<td class='step-details'>Username is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:26 PM</td>
+													<td class='step-details'>Password is entered Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:26 PM</td>
+													<td class='step-details'>Login button is clicked Successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:13:26 PM</td>
+													<td class='step-details'>Welcomepage is displayed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Nov 21, 2023 11:13:22 PM</td>
+										<td class='linked' test-id='85'>Login Functionality</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='author-view' class='view hide'>
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Authors' title='Search Authors'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Authors...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Authors</h5>
+                <ul id='author-collection' class='author-collection'>
+
+                        <li class='author displayed active'>
+                            <div class='author-heading'>
+                                <span class='author-name'>Sandhiya</span>
+                                <span class='author-status right'>
+                                        <span class='label pass'>1</span>
+						        </span>
+                            </div>
+                            <div class='author-content hide'>
+                                <div class='author-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: 1</span>
+                                    
+                                    
+                                </div>
+
+                                <div class='author-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nov 21, 2023 11:13:22 PM</td>
+                                                <td class='linked' test-id='85'>Login Functionality</td>
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='author-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>55</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>250</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Nov 21, 2023 11:13:21 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Nov 21, 2023 11:13:29 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 7s+583ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Smoke</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 55,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 250,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
