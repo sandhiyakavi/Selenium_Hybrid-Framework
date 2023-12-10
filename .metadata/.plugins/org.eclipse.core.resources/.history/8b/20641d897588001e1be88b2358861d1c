@@ -1,7 +1,0 @@
-package com.utilities;
-
-public class Constants {
-
-	public static final int IMPLICIT_WAIT = 5;
-	public static final String PROJECT_NAME = "Community app";
-}

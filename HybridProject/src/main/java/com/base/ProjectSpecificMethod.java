@@ -21,6 +21,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.configuration.ConfigurationManager;
 import com.utilities.Constants;
 
 import io.cucumber.java.Before;
@@ -87,14 +88,11 @@ private static final ThreadLocal<RemoteWebDriver> tlsdriver=new ThreadLocal<Remo
 	public void preCondition() throws IOException {
 		//public void preCondition(String language) throws IOException {
 		node = test.createNode(testName);
-		FileInputStream fileInputStream=new FileInputStream(Constants.CONFIGFILE_URL);
-		properties=new Properties();
-		properties.load(fileInputStream);
 		
 		//driver = new ChromeDriver();
 		setDriver();
 		getDriver().manage().window().maximize();
-		getDriver().get(properties.getProperty("app_url"));
+		getDriver().get(ConfigurationManager.configuration().getAppURL());
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT));
 
 	}

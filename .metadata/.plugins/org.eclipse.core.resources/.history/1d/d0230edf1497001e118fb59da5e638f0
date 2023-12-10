@@ -1,0 +1,10 @@
+package com.configuration;
+
+public class ConfigurationManager {
+
+	    public static Configuration configuration() {
+	        return ConfigCache.getOrCreate(Configuration.class);
+	    }
+	}
+
+}

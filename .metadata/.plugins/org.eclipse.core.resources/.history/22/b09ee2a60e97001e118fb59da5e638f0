@@ -1,0 +1,10 @@
+package com.configuration;
+
+
+import org.aeonbits.owner.Config.LoadPolicy;
+
+@LoadPolicy
+@Config.Sources({"system:properties", "classpath:config.properties"})
+public interface Configuration extends Config {
+	
+}

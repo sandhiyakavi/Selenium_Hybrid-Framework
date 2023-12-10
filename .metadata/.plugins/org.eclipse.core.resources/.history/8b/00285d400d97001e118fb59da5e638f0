@@ -1,0 +1,7 @@
+package com.configuration;
+
+import org.aeonbits.owner.*;
+
+public interface Configuration extends Config {
+
+}

@@ -1,7 +1,0 @@
-package com.pages.helper;
-
-import com.base.ProjectSpecificMethod;
-
-public class EditLeadPage extends ProjectSpecificMethod{
-	
-}

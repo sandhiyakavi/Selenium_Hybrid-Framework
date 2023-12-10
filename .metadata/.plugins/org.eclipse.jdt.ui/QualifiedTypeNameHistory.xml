@@ -9,4 +9,5 @@
     <fullyQualifiedTypeName name="io.cucumber.java.en.Then"/>
     <fullyQualifiedTypeName name="com.base.ProjectSpecificMethod"/>
     <fullyQualifiedTypeName name="com.utilities.Constants"/>
+    <fullyQualifiedTypeName name="org.testng.Assert"/>
 </qualifiedTypeNameHistroy>

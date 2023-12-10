@@ -1,7 +1,0 @@
-package com.utilities;
-
-public class Constants {
-
-	public static final String BROWSER = "chrome";
-	public static final String PROJECT_NAME = "Community app";
-}
