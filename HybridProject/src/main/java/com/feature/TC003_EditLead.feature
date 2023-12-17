@@ -20,5 +20,5 @@ Then Viewleadpage is displayed
 
 Examples:
 |phoneNumber|companyName|
-|'91'|'Manulife'|
-|'81'|'PayPay'|
+|'98'|'Manulife'|
+|'99'|'PayPay'|

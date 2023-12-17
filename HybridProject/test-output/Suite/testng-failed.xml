@@ -9,26 +9,13 @@
           <include name="testDetails"/>
           <include name="setValues"/>
           <include name="postCondition"/>
-          <include name="runScenario"/>
+          <include name="runScenario" invocation-numbers="1"/>
           <include name="tearDownClass"/>
           <include name="endReport"/>
           <include name="startReport"/>
           <include name="preCondition"/>
         </methods>
       </class> <!-- com.testcases.EditLead -->
-      <class name="com.testcases.DeleteLead">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="testDetails"/>
-          <include name="setValues"/>
-          <include name="postCondition"/>
-          <include name="runScenario"/>
-          <include name="tearDownClass"/>
-          <include name="endReport"/>
-          <include name="startReport"/>
-          <include name="preCondition"/>
-        </methods>
-      </class> <!-- com.testcases.DeleteLead -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

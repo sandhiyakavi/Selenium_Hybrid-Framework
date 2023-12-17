@@ -10,4 +10,15 @@
     <fullyQualifiedTypeName name="com.base.ProjectSpecificMethod"/>
     <fullyQualifiedTypeName name="com.utilities.Constants"/>
     <fullyQualifiedTypeName name="org.testng.Assert"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.aeonbits.owner.Config.Sources"/>
+    <fullyQualifiedTypeName name="org.aeonbits.owner.Config.LoadPolicy"/>
+    <fullyQualifiedTypeName name="org.aeonbits.owner.Config"/>
+    <fullyQualifiedTypeName name="org.aeonbits.owner.Config.LoadType"/>
+    <fullyQualifiedTypeName name="org.aeonbits.owner.ConfigCache"/>
+    <fullyQualifiedTypeName name="com.configuration.ConfigurationManager"/>
+    <fullyQualifiedTypeName name="org.testng.IRetryAnalyzer"/>
+    <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFWorkbook"/>
+    <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFSheet"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
 </qualifiedTypeNameHistroy>
