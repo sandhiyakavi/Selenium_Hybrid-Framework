@@ -20,4 +20,4 @@ Then Viewleadpage is displayed
 Examples:
 |companyName|firstName|lastName|
 |'Wipro'|'Dharani'|'S'|
-|'Rakuten'|'Sandhiya'|'S'|
+|'Topcoder'|'Sandhiya'|'S'|
